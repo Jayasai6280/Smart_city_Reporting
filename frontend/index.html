@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Infrastructure Issue</title>
+
+    <!-- Modern Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== PAGE BASE ===== */
+        body {
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 🌊 Soft beach wave background (pale white + sky blue) */
+            background:
+                radial-gradient(circle at 20% 20%, rgba(186, 230, 253, 0.6), transparent 45%),
+                radial-gradient(circle at 80% 60%, rgba(224, 242, 254, 0.8), transparent 50%),
+                linear-gradient(180deg, #f8fbff 0%, #e0f2fe 60%, #f8fbff 100%);
+        }
+
+        /* ===== FORM WRAPPER ===== */
+        form {
+            background: rgba(255, 255, 255, 0.95);
+            width: 420px;
+            padding: 30px 34px;
+            border-radius: 16px;
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(8px);
+        }
+
+        /* ===== TITLE ===== */
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #0f172a;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+        }
+
+        /* ===== LABELS ===== */
+        label {
+            display: block;
+            margin-top: 14px;
+            margin-bottom: 6px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #334155;
+        }
+
+        /* ===== INPUT FIELDS ===== */
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea,
+        input[type="file"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 9px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+            background-color: #f9fbfd;
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+        }
+
+        /* ===== FOCUS EFFECT ===== */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #7dd3fc;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.35);
+        }
+
+        /* ===== TEXTAREA ===== */
+        textarea {
+            min-height: 95px;
+            resize: vertical;
+        }
+
+        /* ===== READONLY AGE FIELD ===== */
+        input[readonly] {
+            background-color: #eef2f7;
+            cursor: not-allowed;
+        }
+
+        /* ===== BUTTON ===== */
+        button {
+            margin-top: 26px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(56, 189, 248, 0.35);
+        }
+
+        /* ===== CONFIRMATION MESSAGE ===== */
+        #confirmation {
+            margin-top: 18px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            color: #16a34a;
+        }
+    </style>
+</head>
+
+<body>
+
+<form id="issueForm" enctype="multipart/form-data">
+    <h2>🛠️ Report an Issue</h2>
+
+    <label>👤 Name</label>
+    <input type="text" name="name" required>
+
+    <label>⚧️ Gender</label>
+    <select name="gender" required>
+        <option value="">Select</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+
+    <label>📅 Date of Birth</label>
+    <input type="date" name="dob" id="dob" required>
+
+    <label>🎂 Age</label>
+    <input type="text" id="age" readonly>
+
+    <label>📞 Phone</label>
+    <input type="text" name="phone" required>
+
+    <label>📧 Email</label>
+    <input type="email" name="email" required>
+
+    <label>🏙️ City</label>
+    <input type="text" name="city" required>
+
+    <label>📍 Area</label>
+    <input type="text" name="area" required>
+
+    <label>🏠 Street</label>
+    <input type="text" name="street" required>
+
+    <label>📮 Pincode</label>
+    <input type="text" name="pincode" required>
+
+    <label>📝 Describe Issue</label>
+    <textarea name="issue" required></textarea>
+
+    <label>📷 Upload Image</label>
+    <input type="file" name="image" accept="image/*">
+
+    <button type="submit">🚀 Submit</button>
+
+    <p id="confirmation"></p>
+</form>
+
+</body>
+</html>
